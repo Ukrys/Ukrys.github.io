@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Linux考试
-subtitle:   20届Linux考试重点
+title:      Linux考试重点
+subtitle:   Linux考试
 date:       2023-04-17
 author:     ukrys
 header-img: img/post-bg-hacker.jpg
@@ -94,7 +94,7 @@ GRUB（GRand Unified Bootloader）是一款常用的开源多操作系统引导�
 
 在BIOS系统中，GRUB通常存储在MBR中，MBR是硬盘的第一个扇区，其中包含引导程序、分区表和磁盘签名等信息。GRUB的配置文件通常存储在/boot/grub/grub.cfg或/etc/grub.conf文件中，该文件包含GRUB的启动选项、操作系统的位置和启动参数等信息。
 
-![image-20230407135710837](C:\Users\94327\AppData\Roaming\Typora\typora-user-images\image-20230407135710837.png)
+[![p9CrIx0.png](https://s1.ax1x.com/2023/04/17/p9CrIx0.png)](https://imgse.com/i/p9CrIx0)
 
 ****
 
@@ -106,7 +106,7 @@ GRUB（GRand Unified Bootloader）是一款常用的开源多操作系统引导�
 
 编辑完成后，使用update-grub命令重新生成GRUB的菜单配置文件即可生效。在编辑前建议备份原配置文件以防止配置错误造成系统启动问题。
 
-| ![image-20230407144203085](C:\Users\94327\AppData\Roaming\Typora\typora-user-images\image-20230407144203085.png) | ![image-20230407144249517](C:\Users\94327\AppData\Roaming\Typora\typora-user-images\image-20230407144249517.png) |
+| [![p9CrTMV.png](https://s1.ax1x.com/2023/04/17/p9CrTMV.png)](https://imgse.com/i/p9CrTMV) | [![p9CrHqU.png](https://s1.ax1x.com/2023/04/17/p9CrHqU.png)](https://imgse.com/i/p9CrHqU) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 这是一个Ubuntu操作系统的引导配置文件（通常称为GRUB配置文件），用于启动Ubuntu系统并加载特定的内核版本（2.6.20-16-generic）。 <br><b>"root (hd0,1)"</b>指定Ubuntu根目录的设备位置，其中"hd0,1"表示第一个硬盘的第二个分区（硬盘和分区号从0开始）。<br> <b>"kernel /boot/vmlinuz-2.6.20-16-generic"</b>指定要加载的内核文件的路径和文件名。<br> <b>"root=UUID=3f784cd9-516f-4808-a601-b19356f6bdea"</b>指定Ubuntu根文件系统的唯一标识符（UUID），以确保引导程序能够正确找到和加载Ubuntu操作系统的根目录。 <br><b>"ro"</b>指定将根文件系统挂载为只读模式，以确保文件系统的完整性。<br><b> "quiet splash"</b>指定内核启动时显示的信息级别和显示Ubuntu启动画面。<br><b> "locale=zh_CN"</b>指定系统语言环境为中文。 "vga=0x318"指定显示分辨率为 1024x768 。<br><b>"initrd /boot/initrd.img-2.6.20-16-generic"</b>指定初始化RAM磁盘（initrd）的路径和文件名，该文件包含启动系统所需的驱动程序和文件系统工具。 | 这是一个与Microsoft Windows XP Professional相关的引导配置代码。这些指令通常用于操作系统启动引导程序（例如GRUB或LILO）中。<br>**"root (hd0,0)"** 指定操作系统所在的硬盘和分区。在这个例子中，操作系统位于第一块硬盘的第一个分区（也就是C:\）。<br/>**"savedefault" **命令告诉引导程序在下次重启时记住上次选择的引导项，这样就不需要每次都手动选择操作系统了。<br/>**"makeactive" **命令将选择的分区标记为“活动分区”，这是在多重引导系统中必需的操作，以指示引导程序在此分区中查找操作系统文件。<br/>**"chainloader +1" **命令加载选择的分区中的引导扇区，并尝试引导该操作系统。<br/> |
 
@@ -120,7 +120,7 @@ GRUB（GRand Unified Bootloader）是一款常用的开源多操作系统引导�
 
 `CMake`是一个跨平台的开源构建工具，它使用CMakeLists.txt文件来描述软件包的构建规则。 `CMake`可以生成各种构建系统，包括Makefile、Visual Studio、Xcode等。 `CMake`还提供了一个跨平台的配置系统，可以自动检测系统和库依赖关系，并提供了一个灵活的变量系统，可以轻松地配置软件包。
 
-![image-20230407222314688](C:\Users\94327\AppData\Roaming\Typora\typora-user-images\image-20230407222314688.png)
+​										[![p9CrqZF.png](https://s1.ax1x.com/2023/04/17/p9CrqZF.png)](https://imgse.com/i/p9CrqZF)
 
 - `tar zxvf application.tar.gz` - 这个命令解压缩tarball，将源代码提取到一个名为“application”的目录中。'z'选项表示使用gzip进行压缩，'x'选项表示提取文件，'v'选项表示在命令行中显示进度，'f'选项表示使用文件名作为参数。
 
@@ -130,21 +130,21 @@ GRUB（GRand Unified Bootloader）是一款常用的开源多操作系统引导�
 
 - `make` - 这个命令根据Makefile文件，编译源代码并生成可执行文件。
 
--	`su -` - 这个命令切换到root用户，以便安装可执行文件。
+- `su -` - 这个命令切换到root用户，以便安装可执行文件。
 
-  - `make install` - 这个命令将可执行文件和其他必要的文件安装到系统中，使其可以在任何地方运行。
+- `make install` - 这个命令将可执行文件和其他必要的文件安装到系统中，使其可以在任何地方运行。
 
-    ![image-20230407222421149](C:\Users\94327\AppData\Roaming\Typora\typora-user-images\image-20230407222421149.png)
+​										[![p9CrLa4.png](https://s1.ax1x.com/2023/04/17/p9CrLa4.png)](https://imgse.com/i/p9CrLa4)
 
 - `tar zxvf application.tar.gz` - 这个命令解压缩tarball，将源代码提取到一个名为“application”的目录中。'z'选项表示使用gzip进行压缩，'x'选项表示提取文件，'v'选项表示在命令行中显示进度，'f'选项表示使用文件名作为参数。
 
--	`cd application` - 这个命令进入提取的应用程序源代码的目录。
--	`mkdir build` - 这个命令创建一个名为“build”的目录，用于在其中构建应用程序。
--	`cd build` - 这个命令进入build目录，以便在其中构建应用程序。
--	`cmake ..` - 这个命令运行`CMake`，使用CMakeLists.txt文件来描述应用程序的构建规则，并生成Makefile。'..'表示上一级目录，即应用程序的根目录。
--	`make VERBOSE=1` - 这个命令根据Makefile文件，编译源代码并生成可执行文件。`VERBOSE=1`选项表示在命令行中显示详细的构建信息，便于调试和故障排除。
--	`su -` - 这个命令切换到root用户，以便安装可执行文件。
--	`make install` - 这个命令将可执行文件和其他必要的文件安装到系统中，使其可以在任何地方运行。
+- `cd application` - 这个命令进入提取的应用程序源代码的目录。
+- `mkdir build` - 这个命令创建一个名为“build”的目录，用于在其中构建应用程序。
+- `cd build` - 这个命令进入build目录，以便在其中构建应用程序。
+- `cmake ..` - 这个命令运行`CMake`，使用CMakeLists.txt文件来描述应用程序的构建规则，并生成Makefile。'..'表示上一级目录，即应用程序的根目录。
+- `make VERBOSE=1` - 这个命令根据Makefile文件，编译源代码并生成可执行文件。`VERBOSE=1`选项表示在命令行中显示详细的构建信息，便于调试和故障排除。
+- `su -` - 这个命令切换到root用户，以便安装可执行文件。
+- `make install` - 这个命令将可执行文件和其他必要的文件安装到系统中，使其可以在任何地方运行。
 
 ****
 
@@ -491,7 +491,7 @@ GRUB（GRand Unified Bootloader）是一款常用的开源多操作系统引导�
 - 将命令的输出传递给其他程序进行处理，以实现多个命令的组合。
 - 将命令的输出发送到网络或其他设备上，以实现实时监控和日志记录等功能。
 
-![image-20230408104356750](C:\Users\94327\AppData\Roaming\Typora\typora-user-images\image-20230408104356750.png)
+​			[		![p9Crji9.png](https://s1.ax1x.com/2023/04/17/p9Crji9.png)](https://imgse.com/i/p9Crji9)
 
 ​	
 
@@ -509,7 +509,7 @@ GRUB（GRand Unified Bootloader）是一款常用的开源多操作系统引导�
 
     在命令行中，每个文件描述符都有一个对应的数字。标准输出的文件描述符为1，标准错误输出的文件描述符为2。">"符号用于输出重定向，"&"符号用于表示将一个文件描述符与另一个文件描述符进行关联。因此，"2>&1"表示将标准错误输出（2）关联到标准输出（1）所指向的文件位置。
 
-![image-20230408105004515](C:\Users\94327\AppData\Roaming\Typora\typora-user-images\image-20230408105004515.png)
+​	[![p9CrxR1.png](https://s1.ax1x.com/2023/04/17/p9CrxR1.png)](https://imgse.com/i/p9CrxR1)
 
 在Linux中，管道（Pipe）是一种将一个进程的输出连接到另一个进程的输入的机制。管道由竖线符号（|）表示。
 
