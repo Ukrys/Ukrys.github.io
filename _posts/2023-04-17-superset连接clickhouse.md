@@ -4,7 +4,7 @@ title:      superset连接clickhouse
 subtitle:   superset连接clickhouse
 date:       2023-04-17
 author:     ukrys
-header-img: img/post-bg-art.jpg
+header-img: img/home-bg-art.jpg
 catalog: 	 true
 tags:
     - superset
