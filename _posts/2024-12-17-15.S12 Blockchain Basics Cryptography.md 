@@ -1,0 +1,252 @@
+---
+layout:     post
+title:      15.S12 Blockchain Basics Cryptography
+subtitle:   MIT-Bitcoin and Money Lec 2
+date:       2024-12-17
+author:     ukrys
+header-img: img/post-bg-blockchain.jpg
+catalog: 	 true
+tags:
+    - Blockchain
+    - Fintech
+---
+
+
+## 3. Blockchain Basics Cryptography
+
+ Bitcoin now has 55,000 blocks, which are added every 10 mins.
+
+![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412111448209.png)
+
+**Technical Features:**
+
+- **Cryptographic** Hash Functions
+
+  - Digital fingerprint of data
+  - Cryptographic Properties:
+    - Preimage resistant (one way): infeasible to determine `x` from `Hash(x)`
+    - Collision resistant: infeasible to find `x` and `y` where `Hash(x) = Hash(y)`
+    - Avalanche effect: Change `x` slightly and `Hash(x)` changes significantly 
+    - Puzzle friendliness: knowing `Hash(x)` and part of `x` it is still very hard to find rest of `x`
+  - Uses as: Names, References, Pointers, Commitments
+  - **Bitcoin Hash Functions:**
+    - Headers & Merkle Trees: `SHA 256`
+    - Bitcoin Addresses: `SHA 256` and `RIPEMD160`
+
+- Timestamped Append-only (Blocks)
+
+  - The order of Blocks matters!!
+
+  ![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412111559187.png)
+
+  - **Block Header**
+    - <u>Version</u>
+    - <u>Previous Block Hash</u>   => to get all the transactions
+    - <u>Merkle Root hash</u>
+    - Timestamp
+    - Difficulty target
+      - relates to mining
+    - Nonce
+      - random number that is used once
+
+- Block Headers & Merkle Trees 
+
+  ![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412171519988.png)
+
+  > https://blog.csdn.net/wendao76/article/details/142720913
+
+- Asymmetric Cryptography & Digital Signatures
+
+  ![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412171528061.png)
+
+  - Digital Signature Algorithms
+    - Generate Key Pair - Public Key (**PK**) & Private Key (**sk**) 0- from random number
+      - Not good random number generation may cause insecurity
+      - Public Key is a one-way function of Private Key (used a function called Elliptic Curve Cryptography-- ECC)
+
+    - Signature - Creates Digital Signature (**Sig**) from message (**m**) and Private Key (**sk**)
+    - Verification - Verifies if a signature (**Sig**) is valid for a message (**m**) and a Public Key (PK)
+
+  - Properties
+    - Infeasible to find Private Key (sk) from Public Key
+    - All valid signatures verify
+    - Signatures infeasible to forge
+
+  - Bitcoin Digital Signature Function
+    - Elliptic Curve Digital Signature Algorithm (EDCSA) ... y2 = x3 + 7
+
+
+- Addresses
+
+  ![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412171550564.png)
+
+  > 上图展示了比特币地址生成的完整流程。以下是分步骤的解释：
+  >
+  > ---
+  >
+  > ### 1. **私钥 (Privkey)**
+  >
+  > - **输入**：随机生成的一段大数字（例如 `C4bbcb1f...`）。
+  > - **作用**：私钥是比特币钱包的核心，用于签名交易，证明你对资金的所有权。
+  > - **特点**：它是保密的，仅用于发送比特币。
+  >
+  > ---
+  >
+  > ### 2. **公钥 (Pubkey)**
+  >
+  > - **生成过程**：通过椭圆曲线数字签名算法 (ECDSA)，从私钥生成公钥。
+  >   - 这是一个单向过程，无法从公钥反推出私钥。
+  > - **公钥示例**：`0478d430...`。
+  > - **作用**：公钥是公开的，可用于生成比特币地址。
+  >
+  > ---
+  >
+  > ### 3. **哈希处理**
+  >
+  > 为了生成比特币地址，对公钥进行两次哈希处理：
+  >
+  > #### (1) **SHA-256**
+  >
+  > - 使用 SHA-256 对公钥进行第一次哈希，得到一段 256 位的哈希值。
+  >
+  > #### (2) **RIPEMD-160**
+  >
+  > - 将 SHA-256 的输出再通过 RIPEMD-160 哈希算法，生成 160 位的哈希值。
+  > - 输出示例：`c4c5d791fcb4654a1ef5...`。
+  >
+  > ---
+  >
+  > ### 4. **双重 SHA-256 校验码**
+  >
+  > - 对 RIPEMD-160 的输出进行两次 SHA-256 哈希运算。
+  > - 从最终结果中取前 4 个字节，作为校验码 (Checksum)。
+  >
+  > 校验码示例：`4abb8f1a`。
+  >
+  > ---
+  >
+  > ### 5. **Base58 编码**
+  >
+  > - 将 RIPEMD-160 的输出与校验码连接起来，然后使用 Base58 编码。
+  > - Base58 是一种避免使用易混淆字符的编码方式，例如剔除了类似于 `0` 和 `O` 的字符。
+  > - 最终生成的比特币地址示例：`1JwSSubhmg6iPtRjtyqhUYYH7bZg3Lfy1T`。
+  >
+  > ---
+  >
+  > ### 6. **比特币地址**
+  >
+  > - **作用**：比特币地址是接收比特币的唯一标识，用户可以将其分享给他人。
+  > - **特点**：
+  >   - 地址由 Base58 编码生成。
+  >   - 公开可见，无需保密。
+  >
+  > ---
+  >
+  > ### 总结
+  >
+  > - 私钥 → 公钥（通过 ECDSA）→ 哈希（SHA-256 和 RIPEMD-160）→ 校验码 → Base58 编码 = 比特币地址。
+  > - 私钥是保密的，用于发送比特币。
+  > - 比特币地址是公开的，用于接收比特币。
+
+
+
+
+
+- **Consensus** through Proof of Work
+- Network of Nodes
+- Native Currency
+
+
+
+- **Transaction** Inputs & Outputs
+
+  ![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412171600677.png)
+
+  > 上图展示了比特币交易的格式及其输入（Input）和输出（Output）的结构。以下是详细解释：
+  >
+  > ---
+  >
+  > ## 1. **Input（输入）**
+  >
+  > 输入部分定义了资金来源，即之前的比特币交易。
+  >
+  > ### **组成部分**
+  >
+  > - **Previous Transaction ID**：
+  >   - 指向之前的一笔交易的唯一标识符（Transaction Hash）。
+  >   - 用于追踪资金来源。
+  >
+  > - **Index**：
+  >   - 索引号，用于指定之前交易中某一输出（Output），作为这笔交易的输入。
+  >   - 因为一笔交易可能有多个输出，索引号用来精确定位其中一个。
+  >
+  > - **Signature**：
+  >   - 签名是由私钥生成的，用于证明交易的合法性。
+  >   - 它表明当前使用的输入确实是由发起人控制的。
+  >
+  > ### **作用**
+  >
+  > - 输入部分唯一标识了资金的来源，并确保用户有权使用这些资金。
+  >
+  > ---
+  >
+  > ## 2. **Output（输出）**
+  >
+  > 输出部分定义了资金的去向，即这笔交易的接收者。
+  >
+  > ### **组成部分**
+  >
+  > - **Value**：
+  >   - 交易金额，以 **Satoshis** 为单位（1 Bitcoin = 10⁸ Satoshis）。
+  >   - 示例：`Value = 500000000 Satoshis` 表示转账 5 BTC。
+  >
+  > - **Public Key (Bitcoin Address)**：
+  >   - 接收者的比特币地址，实际存储的是接收者的公钥。
+  >   - 资金将发往这个地址。
+  >
+  > ### **作用**
+  >
+  > - 定义了资金接收方及其金额。
+  >
+  > ---
+  >
+  > ## 3. **Lock Time（可选）**
+  >
+  > - 指定交易的有效时间。
+  > - 如果设置了 `lock_time`，交易将在指定时间或区块高度后才会被矿工确认。
+  >
+  > ---
+  >
+  > ## 4. **交易的基本逻辑**
+  >
+  > 1. **输入**：
+  >    - 标识了资金来源（之前某笔交易的输出）。
+  >    - 使用私钥签名，证明发起者对这笔资金的控制权。
+  >
+  > 2. **输出**：
+  >    - 指定资金的去向（接收地址和金额）。
+  >
+  > 3. **验证**：
+  >    - 比特币网络会验证签名，确保输入合法。
+  >    - 矿工将交易打包到区块链中，使交易不可篡改。
+  >
+  > ---
+  >
+  > ## 5. **额外说明**
+  >
+  > - 每笔交易的输入总和必须大于等于输出总和。
+  > - 多余的部分作为交易手续费（Fee），奖励给矿工。
+  > - 一笔交易可以包含多个输入和多个输出。
+  >
+  > ---
+  >
+  > ### 总结
+  >
+  > - **输入**：定义资金来源，证明控制权。
+  > - **输出**：定义资金去向，指定接收者。
+  > - 通过这种结构，比特币实现了去中心化的点对点交易和资金追溯。
+
+- Upspent Transaction Output(UTXO)
+
+- Scripting Language 
+
