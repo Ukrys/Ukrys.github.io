@@ -4,7 +4,7 @@ title:      Blockchain Foundation
 subtitle:   Solidity - Smart Contract by Patrick Collins (working in progress...)
 date:       2024-12-21
 author:     ukrys
-header-img: img/post-bg-blockchain.jpg
+header-img: img/bitcoin.jpg
 catalog: 	 true
 tags:
     - Solidity
