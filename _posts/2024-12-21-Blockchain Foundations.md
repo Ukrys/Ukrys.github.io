@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Blockchain Foundation
-subtitle:   Solidity: Smart Contract by Patrick Collins (working in progress...)
+subtitle:   Solidity - Smart Contract by Patrick Collins (working in progress...)
 date:       2024-12-21
 author:     ukrys
 header-img: img/post-bg-blockchain.jpg
@@ -14,7 +14,7 @@ tags:
 
 # BlockChain Foundation
 
-> Solidity: Smart Contract by Patrick Collins
+> Solidity - Smart Contract by Patrick Collins
 
 ## 01 Basic Concepts 
 
