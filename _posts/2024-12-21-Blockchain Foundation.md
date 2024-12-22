@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Blockchain Foundations
+title:      Blockchain Foundation
 subtitle:   Solidity - Smart Contract by Patrick Collins (working in progress...)
 date:       2024-12-21
 author:     ukrys
