@@ -161,7 +161,7 @@ Combining the on-chain decentralized logic with the off-chain decentralized data
 - Public Key: is derived from your private key. Anyone can "see" it, and use it to verify that a transaction came from you.
 
   - Your Address is derived from the private key
-  - Private Key ||| --> Public Key --> Address
+  - Private Key \|\|\| --> Public Key --> Address
 
   ![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412231654634.png)![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412231656855.png)
 
@@ -175,7 +175,7 @@ Combining the on-chain decentralized logic with the off-chain decentralized data
 
 ![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412231708525.png)
 
-- Secret Phrase --> Private Key ||| --> Public Key --> Address
+- Secret Phrase --> Private Key \|\|\| --> Public Key --> Address
 
 ### 3.3 Gas II: Block Rewards & EIP 1559
 
