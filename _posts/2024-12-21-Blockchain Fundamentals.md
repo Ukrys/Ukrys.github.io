@@ -14,8 +14,11 @@ tags:
 
 # BlockChain Fundamentals
 
-> Solidity - Smart Contract by Patrick Collins
-  Working in progress... Updated on 23/12/2024 :)
+> Solidity: Smart Contract by Patrick Collins
+>
+> Working in progress .... 
+>
+> Last update on 23/12/2024 :)
 
 ## 1. What is a Blockchain?
 
