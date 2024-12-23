@@ -189,4 +189,4 @@ Combining the on-chain decentralized logic with the off-chain decentralized data
 
 - A part of the Transaction Fee gets burnt, and the other goes to the miners
 
-**EIP 1559 Fee Model:** a transaction type -->  www.youtube.com/watch?v=MGemhK9t44Q
+**EIP 1559 Fee Model:** a transaction type -->  [www.youtube.com/watch?v=MGemhK9t44Q](EIP 1559 Fee Model)
