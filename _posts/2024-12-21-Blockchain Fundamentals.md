@@ -141,7 +141,7 @@ Combining the on-chain decentralized logic with the off-chain decentralized data
 
 - Genesis Block: The first block in a blockchain
 
-![image-20241223164055747](/Users/ukrys/Library/Application Support/typora-user-images/image-20241223164055747.png)
+![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412231735383.png)
 
 - peers compare the hash of each block to decide which one is acting properly and which one is acting maliciously, the block with hash different from the majority would be out of the chain.
 - Decentralized: Having no single point of authority
@@ -184,11 +184,7 @@ Combining the on-chain decentralized logic with the off-chain decentralized data
 - Transaction Fee = `Blcok Base Fee Per Gas` +` MaxPriorityFee Per Gas` * `Gas Used`
 - Gas Price = The price offered to the miner to purchase this amount of GAS
 - Max Priority Gass Fee = the Max gas price + the tip for the miners
-
 - With your transactions, you can set a limit on how much gas you want to  spend 
-
-  <img src="/Users/ukrys/Library/Application Support/typora-user-images/image-20241223171446059.png" alt="image-20241223171446059" style="zoom:50%;" />
-
 - GWEI:  1 Ether = $10^9$ GWei = $10^{18}$ Wei![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412231715299.png)
 
 - A part of the Transaction Fee gets burnt, and the other goes to the miners
