@@ -346,7 +346,7 @@ When a user submits a transaction to a rollup such as ZK sync an operator picks 
 
 - The gas cost associated with the transaction is split among all of the users, all of the transactions in the transaction batch.
 
-![image-20241224150847359](/Users/ukrys/Library/Application Support/typora-user-images/image-20241224150847359.png)
+![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412241627715.png)
 
 - Rollups helps scale ethereum
 
