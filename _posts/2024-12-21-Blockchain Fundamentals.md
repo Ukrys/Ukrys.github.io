@@ -459,4 +459,4 @@ The stage of a rollup is a categorization framework based on vitalic proposed mi
 
 - Minting & Burning method:
 
-  ![image-20241224155536152](/Users/ukrys/Library/Application Support/typora-user-images/image-20241224155536152.png)
+![](https://raw.githubusercontent.com/Ukrys/DFintech_Courses_images/master/202412241639659.png)
