@@ -2,7 +2,7 @@
 layout:     post
 title:      Blockchain Fundamentals
 subtitle:   Solidity - Smart Contract by Patrick Collins
-date:       2024-12-24
+date:       2024-12-21
 author:     ukrys
 header-img: img/post-bg-bitcoin.jpg
 catalog: 	 true
@@ -15,6 +15,8 @@ tags:
 # BlockChain Fundamentals
 
 > Solidity: Smart Contract by Patrick Collins
+>
+> Last updated: 24/12/2024
 
 ## 1. What is a Blockchain?
 
